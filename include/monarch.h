@@ -41,7 +41,11 @@ monarch_record* monarch_new_record_alloc(unsigned data_len);
 int monarch_destroy_record(monarch_record* tgt);
 
 // get next record
+int monarch_n_channels(monarch_fd* fd);
 size_t monarch_record_len(monarch_fd* fd);
 int monarch_read_next_record(monarch_fd* fd, monarch_record* dest);
+
+// record accessors.
+data_type* monarch_record_data(monarch_record* rec);
 
 #endif //__monarch_h

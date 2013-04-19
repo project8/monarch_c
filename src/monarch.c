@@ -122,3 +122,13 @@ int monarch_read_next_record(monarch_fd* fd, monarch_record* dest)
   }
   return res;
 }
+
+int monarch_n_channels(monarch_fd* fd)
+{
+  return fd->_header->acqmode;
+}
+
+data_type* monarch_record_data(monarch_record* rec)
+{
+  return rec->_data_ptr;
+}
